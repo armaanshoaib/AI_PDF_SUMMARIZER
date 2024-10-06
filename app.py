@@ -16,7 +16,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 def index():
     return render_template('index.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=["POST"])
 def upload_file():
     if 'inputPDF' not in request.files:
         return 'No file uploaded!!', 400
@@ -57,7 +57,7 @@ def extract_text(file_path):
         extracted_cleaned_txt = ' '.join(formatted_txt.split())
         print(extracted_cleaned_txt)      
         # #Forward to summarize.jsp with extracted text        
-        return redirect("http://localhost:8080/PDFSUMMARY_AI/summarize.jsp?extractedText=" + extracted_cleaned_txt)
+        return redirect("http://43.204.82.67:8080/PDFSUMMARY_AI-1/summarize.jsp?extractedText=" + extracted_cleaned_txt)
 
     except ApiException as e:
         print("Exception when calling ConvertDocumentApi->convert_document_pdf_to_txt: %s\n" % e)

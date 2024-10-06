@@ -86,7 +86,6 @@
             width: 80%;
         }
 
-
         .loader {
             border: 4px solid #f3f3f3;
             border-radius: 50%;
@@ -94,7 +93,6 @@
             width: 50px;
             height: 50px;
             -webkit-animation: spin 2s linear infinite;
-           
             animation: spin 2s linear infinite;
             display: none;
             margin: 0 auto;
@@ -142,11 +140,9 @@
         }
     </style>
     <script>
-        
-        function showLoading() {           
-            document.getElementByClassName('loader').style.display = 'block'; 
-            document.getElementById('summaryBtn').disabled = true;  // Disable the button
-           
+        function showLoading() {
+            document.getElementsByClassName('loader')[0].style.display = 'block'; 
+            document.getElementById('summaryBtn').disabled = true;
         }
     </script>
 </head>
@@ -161,7 +157,7 @@
             <p id="uploadDesc"> Upload PDF Here </p>
             <input type="file" id="pdfInput" name="inputPDF" accept=".pdf" required>
             <button type="submit" id="summaryBtn" onclick="showLoading()">Summarize PDF</button>
-            <div class="loader" style="display:none"></div>
+            <div class="loader"></div>
             <p id="proj"> Project by Armaan Shoaib. <a href="https://github.com/armaanshoaib"
                     style="text-decoration: none"><span id='git'>GitHub</span></a> </p>
         </form>
