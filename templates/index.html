@@ -141,8 +141,7 @@
     </style>
     <script>
         function showLoading() {
-            document.getElementsByClassName('loader')[0].style.display = 'block'; 
-            document.getElementById('summaryBtn').disabled = true;
+            document.getElementsByClassName('loader')[0].style.display = 'block';           
         }
     </script>
 </head>
@@ -156,7 +155,7 @@
         <form id="uploadForm" method="post" enctype="multipart/form-data" action="/upload">
             <p id="uploadDesc"> Upload PDF Here </p>
             <input type="file" id="pdfInput" name="inputPDF" accept=".pdf" required>
-            <button type="submit" id="summaryBtn" onclick="showLoading()">Summarize PDF</button>
+            <button type="submit" id="summaryBtn" onclick="showLoading()" >Summarize PDF</button>
             <div class="loader"></div>
             <p id="proj"> Project by Armaan Shoaib. <a href="https://github.com/armaanshoaib"
                     style="text-decoration: none"><span id='git'>GitHub</span></a> </p>

@@ -55,10 +55,14 @@ def extract_text(file_path):
         formatted_txt = ' '.join(line.strip().replace("'", "") for line in formatted_txt)
         # #Split the text into words and rejoin with a single space
         extracted_cleaned_txt = ' '.join(formatted_txt.split())
-        print(extracted_cleaned_txt)      
+        print("__________________________________________")
+        print("unpure extracted text = " + extracted_text)
+        print("=================")
+        print("extracted cleaned text = " + extracted_cleaned_txt)   
+        print("___________________________________________")   
         # #Forward to summarize.jsp with extracted text        
         return redirect("http://43.204.82.67:8080/PDFSUMMARY_AI-1/summarize.jsp?extractedText=" + extracted_cleaned_txt)
-
+        
     except ApiException as e:
         print("Exception when calling ConvertDocumentApi->convert_document_pdf_to_txt: %s\n" % e)
         return jsonify({"error": str(e)}), 500
