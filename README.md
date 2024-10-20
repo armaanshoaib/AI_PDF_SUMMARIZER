@@ -9,7 +9,7 @@
 - Backend : Python(Flask) & JSP (Java Server Pages)
 - APIs
   1. [Convert PDF Content to Text Format](https://portal.cloudmersive.com/documentation?selected=%2fconvert%2fpdf%2fto%2ftxt&api=linkConvert&language=linkPython)
-  2. [Summarize extracted PDF Text using AI](https://rapidapi.com/rphrp1985/api/chatgpt-42)
+  2. [Summarize extracted PDF Text using AI](https://console.groq.com/docs/quickstart)
 ---
 # Upload a file
 <img title="a title" alt="Alt text" src="summaryHomePage.png">
