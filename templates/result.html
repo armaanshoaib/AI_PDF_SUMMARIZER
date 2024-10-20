@@ -1,0 +1,132 @@
+<html>
+<head>
+    <link type="image/png" sizes="32x32" rel="icon" href="aiFavicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Summarizer</title>
+    <style>
+        body {
+            background: linear-gradient(#0D0919, #0E0919);
+            font-family: 'Segoe UI';
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid wheat;
+            box-shadow: 0px 0px 10px wheat;
+            color: white;
+            animation-name: fade-in;
+            animation-duration: 2s;
+
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #heading {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        #Ai {
+            background: -webkit-linear-gradient(red, violet);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 1px 1px 25px white;
+        }
+
+        #summary {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            color: yellow;
+            animation-name: fade-in;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #copyBtn {
+            width: 30%;
+            cursor: pointer;
+            background-color: transparent;
+            border-color: yellow;
+            color: white;
+            border: 1px solid wheat;
+            padding: 12px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin: 10px;
+
+        }
+
+        
+
+        #goBack {
+            color: greenyellow;
+            font-family: Verdana, sans-serif;
+            font-size: 28px;
+        }
+
+        #nextPdf {
+            color: green;
+            font-family: Verdana, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function copyText(id) {
+            var copyText = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(copyText).then(function () {
+                alert('Copied to clipboard');
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p id="heading"> Summary by <span id="Ai"> AI </span> </p>
+        <p id="summary">
+             {{summary}}
+        </p>
+        <button onclick='copyText("summary")' id='copyBtn'>Copy Summary </button>
+        <br>
+        <a href="index.html" id="nextPdf"> Summarize another Document... </a>
+    </div>
+    
+</body>
+
+</html>

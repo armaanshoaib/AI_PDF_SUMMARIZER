@@ -3,6 +3,9 @@
     Created on : 22-Sep-2024, 6:56:42 pm
     Author     : shaik
 --%>
+<% // // THIS jsp IS OF NO USE ANYMORE.
+// // ITS FUNCTIONALITY IS IMPLEMENTED IN THE PYTHON FILE (app.py) ITSELF
+%>
 <%@page import="java.net.http.HttpRequest" %>
 <%@page import="java.net.URI" %>
 <%@page import="java.util.*" %>
@@ -23,24 +26,24 @@
 <%  
    String summary = "null";
    String suffix = "Summarize the given text : '";
-   String PDFTXT = request.getParameter("extractedText");
+   String PDFTXT = request.getParameter(extractedText);
     
   String prompt = suffix + PDFTXT;
   if(PDFTXT != "null" || PDFTXT != "" || PDFTXT != null || PDFTXT != " "){   
-  HttpRequest req = HttpRequest.newBuilder()
-          .uri(URI.create("https://chatgpt-42.p.rapidapi.com/gpt4"))
-          .header("x-rapidapi-key", "cea11f5bccmshdf4d7b192553da4p16a2d2jsn63aab5fe3783")
-          .header("x-rapidapi-host", "chatgpt-42.p.rapidapi.com")
-          .header("Content-Type", "application/json")
-          .method("POST", HttpRequest.BodyPublishers.ofString("{\"messages\":[{\"role\":\"user\",\"content\":\"" + prompt + "\"}],\"web_access\":false}"))
-          .build();
-  HttpResponse<String> resp = HttpClient.newHttpClient().send(req, HttpResponse.BodyHandlers.ofString());
-  String respBody = resp.body();
-  JSONObject jsonObject = new JSONObject(respBody);
+//   HttpRequest req = HttpRequest.newBuilder()
+//           .uri(URI.create("https://chatgpt-42.p.rapidapi.com/gpt4"))
+//           .header("x-rapidapi-key", "cea11f5bccmshdf4d7b192553da4p16a2d2jsn63aab5fe3783")
+//           .header("x-rapidapi-host", "chatgpt-42.p.rapidapi.com")
+//           .header("Content-Type", "application/json")
+//           .method("POST", HttpRequest.BodyPublishers.ofString("{\"messages\":[{\"role\":\"user\",\"content\":\"" + prompt + "\"}],\"web_access\":false}"))
+//           .build();
+//   HttpResponse<String> resp = HttpClient.newHttpClient().send(req, HttpResponse.BodyHandlers.ofString());
+//   String respBody = resp.body();
+//   JSONObject jsonObject = new JSONObject(respBody);
 
-  if (resp.statusCode() == 200 && jsonObject.has("result")) {
-      summary = jsonObject.getString("result");
-  }
+//   if (resp.statusCode() == 200 && jsonObject.has("result")) {
+//       summary = jsonObject.getString("result");
+//   }
    //out.println(summary);
   }
         
@@ -165,7 +168,7 @@
         </script>
     </head>
     <body>
-        <%  if ( summary != "null") { %>
+        <% // if ( summary != "null") { %>
 
         <div class="container">
             <p id="heading"> Summary by  <span id="openAi"> AI </span> </p>
@@ -174,7 +177,7 @@
             <br>
             <a href="index.jsp" id="nextPdf"> Summarize another PDF... </a>
         </div>
-        <% } else { %>
+        <% // } else { %>
         
             <div id="error">
             <p id="errMsg"> Uh Oh! Error occurred! The PDF is either : </p>
@@ -188,7 +191,7 @@
         </div>    
        
 
-        <% } %>
+        <% // } %>
     </body>
 </html>
 

@@ -1,0 +1,49 @@
+
+<html>
+    <head>
+        <link type="image/png" sizes="32x32" rel="icon" href="aiFavicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Summarizer</title>
+        <style>
+         #error {
+        background-color: #07012C;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border: 1px solid wheat;
+        max-width: 90%;
+        box-sizing: border-box;
+    }
+
+    #errMsg {
+        color: red;
+        font-family: Consolas;
+        font-size: 28px;
+    }
+
+    #errList {
+        color: red;
+        font-family: Consolas;
+        font-size: 28px;
+    }
+    #git {
+            color: violet;
+        }
+
+        </style>
+    </head>
+    
+</html>
+<div id="error">
+    <p id="errMsg"> Uh Oh! Error occurred! The document is either : </p>
+    <ul id="errList">
+        <li>Password Protected</li>
+        <li>Contains Unreadable Text</li>
+        <li>Corrupt</li>
+        <li>Or worse, my API might have hit the limit! Contact me on <a href="https://github.com/armaanshoaib"
+            style="text-decoration: none"><span id='git'>GitHub</span></a> to resolve :)</li>
+    </ul>
+    </ul>
+    <a href="index.html" id="goBack"> Click here to retry. </a>
+</div>

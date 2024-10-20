@@ -1,6 +1,7 @@
 ### PDF SUMMARIZER USING AI
 ---
 - Summarize your PDF Files with the help of Artificial Intelligence.
+- Note : My project doesnt support OCR yet.
 - [Live Website (Deployed on EC2 Instance)](http://43.204.82.67:5000/)
 ---
 ### Tech Stack
