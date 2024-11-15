@@ -57,29 +57,29 @@ def extract_text(file_path):
         formatted_txt = ' '.join(line.strip().replace("'", "") for line in formatted_txt)
         # #Split the text into words and rejoin with a single space        
         extracted_cleaned_txt = ' '.join(formatted_txt.split())       
-        print("__________________________________________")
-        print("unpure extracted text = " + extracted_text)
-        print("=================")
-        print("extracted cleaned text = " + extracted_cleaned_txt)   
-        print("___________________________________________")   
+        # print("__________________________________________")
+        # print("unpure extracted text = " + extracted_text)
+        # print("=================")
+        # print("extracted cleaned text = " + extracted_cleaned_txt)   
+        # print("___________________________________________")   
         
         return summarize(extracted_cleaned_txt)
         
     except ApiException as e:
-        print("Exception when calling ConvertDocumentApi->convert_document_pdf_to_txt: %s\n" % e)
+        #print("Exception when calling ConvertDocumentApi->convert_document_pdf_to_txt: %s\n" % e)
         return jsonify({"error": str(e)}), 500
     
     # # summarizing the text as DOCTXT
 def summarize(DOCTXT):
     
-    print(DOCTXT)
+    #print(DOCTXT)
     if(DOCTXT == "null" or DOCTXT == "" or DOCTXT == " " or DOCTXT == "'null'"):
         return render_template('error.html')
     
     summary = "null"
     suffix = "Summarize the given text : '" 
     prompt = suffix + DOCTXT + "'" 
-    print("prompt = " + prompt)
+    #print("prompt = " + prompt)
     # # API INSTANCE
     
     client = Groq(
@@ -95,7 +95,7 @@ def summarize(DOCTXT):
     model="llama3-8b-8192",
     )
     summary = str(chat_completion.choices[0].message.content)
-    print(summary)
+    #print(summary)
 
     return render_template('result.html',summary=summary)   
     
