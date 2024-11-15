@@ -6,7 +6,7 @@
 ---
 ### Tech Stack
 - Frontend : HTML, CSS, JavaScript
-- Backend : Python(Flask) & JSP (Java Server Pages)
+- Backend : Python(Flask)
 - APIs
   1. [Convert PDF Content to Text Format](https://portal.cloudmersive.com/documentation?selected=%2fconvert%2fpdf%2fto%2ftxt&api=linkConvert&language=linkPython)
   2. [Summarize extracted PDF Text using AI](https://console.groq.com/docs/quickstart)
