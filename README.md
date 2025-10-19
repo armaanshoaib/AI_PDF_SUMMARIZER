@@ -2,7 +2,7 @@
 ---
 - Summarize your PDF Files with the help of Artificial Intelligence.
 - Note : My project doesnt support OCR yet.
-- [Live Website (Deployed on EC2 Instance)](http://3.108.168.139:8080/5000)
+- [Live Website (Deployed on EC2 Instance)](http://3.108.168.139:/5000)
 ---
 ### Tech Stack
 - Frontend : HTML, CSS, JavaScript
